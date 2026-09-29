@@ -59,7 +59,11 @@ function setup(options: ProviderServiceOptions = {}) {
   internal.provider.probeCapabilities = vi.fn(async () => ({ supportsChat: true, supportsStreaming: true, supportsTools: true }))
   const published: AltrexEvent[] = []
   events.subscribe(event => published.push(event))
-  return { root, project: realpathSync(project), service, internal, events, published, ensureLocalRuntime }
+  // Use realpathSync.native so the canonical (long) Windows path is used on CI too.
+  // Plain realpathSync returns 8.3 short names (e.g. RUNNER~1) on the GitHub Windows
+  // runner, while ProviderService normalizes with .native — keeping them in sync here
+  // avoids a short/long-path mismatch in the checkpoint assertions below.
+  return { root, project: realpathSync.native(project), service, internal, events, published, ensureLocalRuntime }
 }
 
 const request = (overrides: Partial<ChatRequest>): ChatRequest => ({

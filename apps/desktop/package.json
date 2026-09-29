@@ -1,0 +1,93 @@
+{
+  "name": "@altrex/desktop",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ALTREX CODE desktop AI coding workspace",
+  "author": "ALTREX CODE",
+  "type": "module",
+  "main": "./out/main/index.js",
+  "build": {
+    "appId": "com.altrex.code",
+    "productName": "ALTREX CODE",
+    "directories": {
+      "output": "../../release"
+    },
+    "files": [
+      "out/**/*",
+      "!out/qa/**/*",
+      "package.json"
+    ],
+    "asar": true,
+    "npmRebuild": false,
+    "win": {
+      "icon": "assets/branding/altrex-app-icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "artifactName": "ALTREX-CODE-Setup-${version}-${arch}.${ext}",
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "deleteAppDataOnUninstall": false
+    },
+    "portable": {
+      "artifactName": "ALTREX-CODE-Portable-${version}-${arch}.${ext}"
+    }
+  },
+  "scripts": {
+    "postinstall": "install-electron",
+    "dev": "electron-vite dev",
+    "dev:web": "vite --config vite.web.config.ts --host 127.0.0.1",
+    "build": "electron-vite build",
+    "dist:win": "pnpm build && electron-builder --win --publish never",
+    "verify:release": "node scripts/verify-windows-release.cjs",
+    "typecheck": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json",
+    "test": "vitest run",
+    "preview": "electron-vite preview",
+    "smoke": "cross-env ALTREX_SMOKE_TEST=1 electron-vite preview",
+    "smoke:scale-125": "cross-env ALTREX_SMOKE_TEST=1 ALTREX_DEVICE_SCALE_FACTOR=1.25 electron-vite preview",
+    "smoke:scale-150": "cross-env ALTREX_SMOKE_TEST=1 ALTREX_DEVICE_SCALE_FACTOR=1.5 electron-vite preview"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.2.8",
+    "@fontsource-variable/jetbrains-mono": "^5.2.8",
+    "lucide-react": "^0.536.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@altrex/contracts": "workspace:*",
+    "@altrex/core": "workspace:*",
+    "@tailwindcss/vite": "^4.3.3",
+    "@testing-library/react": "^16.3.0",
+    "@types/node": "^24.2.1",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "@vitejs/plugin-react": "^5.0.0",
+    "cross-env": "^10.0.0",
+    "electron": "^43.2.0",
+    "electron-builder": "^26.15.3",
+    "electron-vite": "^5.0.0",
+    "jsdom": "^26.1.0",
+    "simple-icons": "16.32.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.2",
+    "vite": "^7.0.0",
+    "vitest": "^3.2.4"
+  }
+}

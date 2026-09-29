@@ -1,0 +1,20 @@
+{
+  "name": "altrex-code",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A local-first AI software engineering environment.",
+  "packageManager": "pnpm@11.9.0",
+  "scripts": {
+    "dev": "pnpm --filter @altrex/desktop dev",
+    "dev:web": "pnpm --filter @altrex/desktop dev:web",
+    "build": "pnpm -r build",
+    "dist:win": "pnpm --filter @altrex/desktop dist:win",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r test",
+    "preview": "pnpm --filter @altrex/desktop preview"
+  },
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=10.0.0"
+  }
+}

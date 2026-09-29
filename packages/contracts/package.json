@@ -1,0 +1,23 @@
+{
+  "name": "@altrex/contracts",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Versioned, renderer-safe schemas for the ALTREX core <-> UI event and command contract.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/*.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.2.1",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}

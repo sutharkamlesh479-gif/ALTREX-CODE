@@ -1,0 +1,7 @@
+export type TaskStatus = 'QUEUED' | 'WAITING' | 'RUNNING' | 'VERIFYING' | 'COMPLETED' | 'FAILED' | 'BLOCKED' | 'CANCELLED'
+export type MasterSpec = { project: string; goal: string; stack: string[]; architecture: string[]; designRules: string[]; apiContracts: string[]; dataModels: string[]; requirements: string[]; decisions: string[] }
+export type TaskContract = { id: string; title: string; description: string; role: string; priority: number; dependencies: string[]; allowedFiles: string[]; restrictedFiles: string[]; inputs: string[]; outputs: string[]; acceptance: string[] }
+export type Verification = { passed: boolean; summary: string; commands: Array<{ command: string; exitCode: number | null; output: string }>; reviewer: string; checkedAt: string }
+export type SpecialistTask = TaskContract & { status: TaskStatus; model: string | null; provider: string | null; attempt: number; filesChanged: string[]; actions: string[]; result: string; verification: Verification | null; error: string | null }
+export type ProjectRun = { version: 1; id: string; projectPath: string; request: string; createdAt: string; updatedAt: string; status: 'PLANNING' | 'RUNNING' | 'VERIFYING' | 'INTEGRATING' | 'COMPLETED' | 'FAILED' | 'CANCELLED' | 'INTERRUPTED'; spec: MasterSpec | null; tasks: SpecialistTask[]; activity: string[]; finalVerification: Verification | null; revisions: string[]; filesChanged: string[]; error: string | null }
+export type DirectorPlan = { spec: MasterSpec; tasks: TaskContract[] }

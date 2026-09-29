@@ -1,0 +1,17 @@
+node_modules/
+out/
+dist/
+release/
+coverage/
+.vite/
+*.log
+.DS_Store
+Thumbs.db
+.env
+.env.*
+!.env.example
+.altrex/cache/
+.altrex/checkpoints/
+.altrex/worktrees/
+.local-ai/
+.pnpm-store/

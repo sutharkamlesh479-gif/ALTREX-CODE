@@ -1,0 +1,23 @@
+{
+  "name": "@altrex/core",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ALTREX engine: gateway, tools, workspace, orchestration. Pure Node; must never import Electron.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/*.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@altrex/contracts": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^24.2.1",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}

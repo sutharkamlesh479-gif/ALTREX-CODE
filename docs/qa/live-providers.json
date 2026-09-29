@@ -1,0 +1,89 @@
+{
+  "at": "2026-09-27T06:27:38.060Z",
+  "fixture": false,
+  "maxOutputTokens": 128,
+  "maxAttempts": 1,
+  "repositoryDataSent": false,
+  "results": [
+    {
+      "provider": "ollama",
+      "configured": true,
+      "model": "qwen2.5-coder:7b-instruct",
+      "auth": "NOT TESTED",
+      "discovery": "NOT TESTED",
+      "chat": "NOT TESTED",
+      "stream": "NOT TESTED",
+      "tools": "NOT TESTED",
+      "cancellation": "NOT TESTED",
+      "health": "NOT TESTED",
+      "errors": [
+        "CREDENTIAL_DECRYPT_FAILED"
+      ],
+      "calls": 0
+    },
+    {
+      "provider": "google",
+      "configured": true,
+      "model": "gemini-3.8-flash",
+      "auth": "NOT TESTED",
+      "discovery": "NOT TESTED",
+      "chat": "NOT TESTED",
+      "stream": "NOT TESTED",
+      "tools": "NOT TESTED",
+      "cancellation": "NOT TESTED",
+      "health": "NOT TESTED",
+      "errors": [
+        "CREDENTIAL_DECRYPT_FAILED"
+      ],
+      "calls": 0
+    },
+    {
+      "provider": "nvidia",
+      "configured": true,
+      "model": "qwen/qwen3-coder-480b-a35b-instruct",
+      "auth": "NOT TESTED",
+      "discovery": "NOT TESTED",
+      "chat": "NOT TESTED",
+      "stream": "NOT TESTED",
+      "tools": "NOT TESTED",
+      "cancellation": "NOT TESTED",
+      "health": "NOT TESTED",
+      "errors": [
+        "CREDENTIAL_DECRYPT_FAILED"
+      ],
+      "calls": 0
+    },
+    {
+      "provider": "openrouter",
+      "configured": true,
+      "model": "openai/gpt-4.1-mini",
+      "auth": "NOT TESTED",
+      "discovery": "NOT TESTED",
+      "chat": "NOT TESTED",
+      "stream": "NOT TESTED",
+      "tools": "NOT TESTED",
+      "cancellation": "NOT TESTED",
+      "health": "NOT TESTED",
+      "errors": [
+        "CREDENTIAL_DECRYPT_FAILED"
+      ],
+      "calls": 0
+    },
+    {
+      "provider": "groq",
+      "configured": true,
+      "model": "llama-3.3-70b-versatile",
+      "auth": "NOT TESTED",
+      "discovery": "NOT TESTED",
+      "chat": "NOT TESTED",
+      "stream": "NOT TESTED",
+      "tools": "NOT TESTED",
+      "cancellation": "NOT TESTED",
+      "health": "NOT TESTED",
+      "errors": [
+        "CREDENTIAL_DECRYPT_FAILED"
+      ],
+      "calls": 0
+    }
+  ]
+}

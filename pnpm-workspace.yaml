@@ -1,0 +1,7 @@
+packages:
+  - apps/*
+  - services/*
+  - packages/*
+allowBuilds:
+  electron-winstaller: false
+  esbuild: true
